@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Form</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .responsive-card {
+      background: #222;
+      color: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .responsive-card h2 {
+      text-align: center;
+      color: #00c8ff;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: grid;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    input, select, button {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      width: 100%;
+      outline: none;
+    }
+
+    input, select {
+      background: #333;
+      color: #fff;
+    }
+
+    input:focus, select:focus {
+      border: 2px solid #00c8ff;
+      background: #2a2a2a;
+    }
+
+    button {
+      background: #00c8ff;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.3s;
+    }
+
+    button:hover {
+      background: #009acd;
+      transform: scale(1.05);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .responsive-card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="responsive-card">
+    <h2>📝 Responsive Form</h2>
+    <form id="responsiveForm">
+      <div>
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Choose a username" required>
+      </div>
+
+      <div>
+        <label for="age">Age</label>
+        <input type="number" id="age" placeholder="Enter your age" required>
+      </div>
+
+      <div>
+        <label for="gender">Gender</label>
+        <select id="gender" required>
+          <option value="">-- Select --</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <button type="submit">Register</button>
+    </form>
+  </section>
+
+  <script>
+    document.getElementById("responsiveForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      alert("🎉 Registration Successful!");
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
